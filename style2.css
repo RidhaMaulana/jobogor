@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'jostmedium';
+    src: url('fonts/jost-500-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'jostthin';
+    src: url('fonts/jost-200-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #fafdf6;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    background-color: #fafdf6;
+    min-height: 80px;
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .9);
+}
+
+header a {
+
+    text-decoration: none;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header #menu li {
+    float: left;
+    /*display: inline;*/
+    list-style: none;
+    padding: 25px 20px 20px 20px;
+}
+
+#menu a {
+    color: #404041;
+    font-size: 19px;
+    font-family: 'jostmedium', sans-serif;
+    transition: .2s;
+}
+
+header nav {
+    float: right;
+}
+
+#menu .current a {
+    color: orangered;
+
+}
+
+#menu a:hover {
+    color: #fcbf10;
+    border-bottom: 2px solid #404041;
+    transform: scale(6, 6);
+
+}
+
+.logo img {
+    width: 100px;
+    position: absolute;
+    left: 50px;
+    top: 15px;
+}
+
+
+#menu {
+    float: right;
+}
+
+footer {
+    padding: 20px;
+    /* margin-top: 20px; */
+    color: white;
+    background-color: rgb(61, 61, 61);
+    text-align: center;
+}
+
+
+/*login , signup */
+
+.login,
+.signup {
+    background-image: url(img/computer-desk-electronics-238118.jpg);
+    background-size: cover;
+}
+
+.signup,
+.login {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.form {
+    min-height: 600px;
+    padding: 0 150px;
+    color: #404041;
+}
+
+.form .form-title {
+    text-align: center;
+    margin: 90px 0 20px 0;
+}
+
+.form .form-title h1 {
+    font: 40px 'jostmedium', sans-serif;
+    margin-bottom: 10px;
+}
+
+.form form h5 {
+    text-align: center;
+    font-family: 'jostthin', sans-serif margin: 15px 0 0 65px;
+}
+
+.form form h6 {
+    text-align: left;
+    margin: 12px 0 0 62px;
+}
+
+.form form {
+    text-align: center;
+}
+
+.form form input {
+    width: 80%;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    background: white;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 0 2px 2px rgba(100, 100, 100, 0.2);
+}
+
+
+.form form input[type=submit] {
+
+    width: 20%;
+    background-color: #55d6be;
+    color: white;
+    font-weight: bold;
+    padding: 14px 20px;
+    margin-top: 45px;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.form form input[type=submit]:hover,
+.login-sidebar .btn:hover {
+    background-color: #49bba6;
+}
+
+/* input type file */
+.input-container {
+    margin-top: 20px;
+    border: none;
+    text-align: left;
+    margin: 15px 0 0 60px;
+}
+
+input[type='file'] {
+    display: none;
+}
+
+/* ahir type file */
+
+.file-info {
+    display: inline-block;
+    width: 303px;
+    font-size: 0.9em;
+    background: #404041;
+    color: #fff;
+    /* min-height: 35px; */
+    padding: 12px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.browse-btn {
+    display: inline-block;
+    width: 150px;
+    background: #03A595;
+    color: #fff;
+    min-height: 35px;
+    padding: 12px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.browse-btn:hover {
+    background: #4ec0b4;
+}
+
+/* akhir login signup */
+
+/* search */
+.search {
+    background-color: #eeefa8;
+    padding: 20px;
+    position: relative;
+    min-height: 40px;
+    margin-bottom: 50px;
+    /* text-align: center; */
+}
+
+.search .search-box {
+    width: 80%;
+    text-align: center;
+    /* margin: auto; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.search input[type=text] {
+    /* float: left; */
+    width: 60%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.search input[type=submit] {
+    width: 10%;
+    padding: 12px 0 12px 0;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    left: -1%;
+    cursor: pointer;
+    background: #2d2a32;
+    color: white;
+
+}
+
+.search input[type=submit]:hover {
+    background: #fcbf10;
+}
+
+/* akhir search */
+
+/* beranda lowongan */
+.beranda-lowongan {
+    width: 70%;
+    margin: auto;
+}
+
+.menu-lowongan {
+    text-align: right;
+}
+
+.menu-lowongan select,
+.menu-lowongan option {
+    width: 25%;
+    padding: 12px 20px;
+    border: none;
+    background: #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.lowongan,
+.menu-lowongan {
+    padding: 20px;
+    position: relative;
+    background: #fafdf6;
+    box-shadow: 0 0 5px 3px rgba(220, 220, 220, 0.5);
+    margin-top: 10px;
+}
+
+.company-logo {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+
+}
+
+.company-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.lowongan a {
+    text-decoration: none;
+    color: black;
+}
+
+.lowongan a:hover {
+    color: #fcbf10;
+}
+
+.lowongan h1 a {
+    font: 30px 'bebas_neuebold';
+    margin-bottom: 8px;
+    color: #ed254e;
+    text-shadow: 2px 1px rgba(100, 100, 100, 0.3);
+    letter-spacing: 2px;
+}
+
+.lowongan h3 {
+    margin-bottom: 15px;
+}
+
+.lowongan h3 a {
+    color: #404041;
+}
+
+.lowongan h3 a:hover {
+    color: #fcbf10;
+}
+
+
+.lowongan .location,
+.lowongan .rp {
+    margin: 0 0 0 15px;
+    height: 15px;
+    display: block;
+    line-height: 15px;
+}
+
+.location .icon {
+    float: left;
+    margin-right: 13px;
+    display: inline-block;
+    background-image: url(img/maps-and-flags.svg);
+    width: 12px;
+    height: 12px;
+}
+
+.lowongan .rp {
+    font-weight: 10px;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.lowongan p {
+    margin-top: 10px;
+}

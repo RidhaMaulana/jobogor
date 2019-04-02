@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'bebas_neuebold';
+    src: url('fonts/bebasneue-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(230, 230, 230);
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background-color: rgb(61, 61, 61);
+    color: white;
+    min-height: 40px;
+    border-bottom: red 3px solid;
+}
+
+#judul {
+    float: left;
+}
+
+#judul a {
+    font-size: 50px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.highlight {
+    color: orangered;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+}
+
+header #menu li {
+    float: left;
+    /*display: inline;*/
+    list-style: none;
+    padding: 25px 20px 20px 20px;
+}
+
+#menu a {
+    color: white;
+    font-size: 19px;
+}
+
+header nav {
+    float: right;
+}
+
+#menu .current a {
+    color: orangered;
+
+}
+
+#menu a:hover {
+    font-weight: bold;
+}
+
+/* name showcase */
+
+.tittlemid {
+    margin-top: -105px;
+}
+
+.tittle {
+    position: relative;
+    height: 105px;
+    background-color: rgba(0, 0, 0, 0.63);
+    width: 30%;
+    top: 180px;
+    left: 70%;
+    z-index: 1;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.tittle p {
+    color: white;
+    padding-top: 0px;
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tittle form {
+    padding-left: 10px;
+    padding-top: 7px;
+}
+
+
+/* background slider */
+
+.slider {
+    overflow: hidden;
+    margin-bottom: -1px;
+}
+
+.slider figure {
+    position: relative;
+    width: 500%;
+    min-height: 30%;
+    margin: 0;
+    left: 0;
+    animation: 50s slider infinite;
+}
+
+.slider figure img {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+
+    5% {
+        left: 0%;
+    }
+
+    15% {
+        left: -100%;
+    }
+
+    30% {
+        left: -200%;
+    }
+
+    40% {
+        left: -300%;
+    }
+
+    50% {
+        left: -400%;
+    }
+
+    60% {
+        left: -400%;
+    }
+
+    70% {
+        left: -300%;
+    }
+
+    80% {
+        left: -200%;
+    }
+
+    90% {
+        left: -100%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+.daftar {
+    margin-top: -30px;
+}
+
+.batas {
+    margin-top: 0px;
+}
+
+.daftar form {
+    position: relative;
+    top: 173px;
+    z-index: 1;
+    left: 950px;
+    width: 405px;
+
+}
+
+.button1 {
+    border-radius: 10px;
+    width: 60px;
+    color: white;
+    background-color: orangered;
+    height: 30px;
+    margin-right: 10px;
+    border: 0;
+}
+
+.button2 {
+    border-radius: 10px;
+    width: 50px;
+    color: white;
+    background-color: orangered;
+    height: 30px;
+    border: 0;
+}
+
+.input1 {
+    height: 30px;
+    border-radius: 10px;
+}
+
+#showcase {
+    background-color: rgb(61, 61, 61);
+    text-align: center;
+    height: 30px;
+    padding: 10px;
+    color: white;
+    border-top: red 4px solid;
+}
+
+#showcase p {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#boxes {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#boxes .box {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+
+footer {
+    padding: 20px;
+    margin-top: 20px;
+    color: white;
+    background-color: rgb(61, 61, 61);
+    text-align: center;
+}
+
+
+/* form login */
+.form {
+    margin: auto;
+    width: 40%;
+    background: white;
+}
+
+.form form {
+    width: 100%;
+    min-height: 320px;
+    background: #616161;
+    padding: 20px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.form form h1 {
+    font: 40px 'bebas_neuebold', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+.form form .input {
+    margin: 40px 0 0 0;
+}
+
+.form form input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form form input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form form input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* akhir form login */
+
+/* search */
+.search {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    min-height: 40px;
+    /* text-align: center; */
+}
+
+.search .search-box {
+    width: 80%;
+    text-align: center;
+    /* margin: auto; */
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.search input[type=text] {
+    /* float: left; */
+    width: 60%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.search input[type=submit] {
+    width: 15%;
+    padding: 12px 0 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: relative;
+    left: -1%;
+    cursor: pointer;
+}
+
+.search input[type=submit]:hover {
+    background: #45a049;
+}
+
+/* akhir search */
+
+/* beranda lowongan */
+.beranda-lowongan {
+    width: 70%;
+    margin: auto;
+}
+
+.menu-lowongan form {
+    text-align: right;
+    outline: none;
+    box-shadow: none;
+    margin-right: 40px;
+}
+
+.menu-lowongan form select,
+.menu-lowongan form option {
+    text-align: center;
+    width: 22%;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    background: #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.lowongan,
+.menu-lowongan {
+    padding: 20px;
+    position: relative;
+    background: white;
+    box-shadow: 0 0 10px 10px rgba(220, 220, 220, 0.5);
+    margin-top: 10px;
+}
+
+.company-logo {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+
+}
+
+.company-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.lowongan a {
+    text-decoration: none;
+    color: black;
+}
+
+.lowongan a:hover {
+    color: orangered;
+}
+
+.lowongan h1 a {
+    font: 30px 'bebas_neuebold';
+    margin-bottom: 8px;
+    color: navy;
+}
