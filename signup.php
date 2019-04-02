@@ -18,27 +18,46 @@
     </span>
     <div class="signup">
         <div class="form">
-            <form>
+            
                 <div class="form-title">
                     <h1>DAFTAR</h1>
                     <h5>Tersedia banyak pilihan pekerjaan dengan pendapatan dan karir yang menjanjikan</h5>
                 </div>
 
-                <div class="input">
-                    <input type="text" name="email" placeholder="Input Your Name.." required>
-                    <input type="email" name="email" placeholder="Input Your Email.." required>
+            <div class="input">
+             <form action="login.php" method="post" enctype="multipart/form-data">
+            
+           <!--           <input type="text" name="name" placeholder="Input Your Name.." required>
+                    <input type="text" name="email" placeholder="Input Your Email.." required>
+                    <input type="text" name="phone" placeholder="Input Your phone.." required>
+                    <input type="text" name="address" placeholder="Input Your Address.." required>
+                    <input type="text" name="education" placeholder="Input Your Education.." required>
                     <input type="password" name="password" placeholder="Input Your Password.." required>
-                    <div class="input-container">
-                        <input type="file" id="real-input">
-                        <button class="browse-btn">
-                            Browse Files
-                        </button>
+               -->    
+                   
+              
+                <div class="input-container">
+                        
+               
+                        <label for="fileSelect">Photo</label>
+                        <input type="file" name="photo" id="fileSelect">
+               
+        
+               
+                    <label for="fileSelect">Appletter</label>
+                    <input type="file" name="appletter" id="fileSelect">
+                
+                                
+                        <label for="fileSelect">CV:</label>
+                        <input type="file" name="CV" id="fileSelect">
+              
                         <span class="file-info">Upload a file</span>
                     </div>
                     <h6>Sudah Terdaftar? <a href="login.html">Masuk Sekarang</a></h6>
                     <input type="submit" value="Submit">
-                </div>
             </form>
+            </div>
+            
         </div>
     </div>
     <script src="jquery-3.3.1.min.js"></script>
