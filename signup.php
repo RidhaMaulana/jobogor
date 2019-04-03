@@ -1,3 +1,4 @@
+<?php include 'class.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,16 +26,16 @@
                 </div>
 
             <div class="input">
-             <form action="login.php" method="post" enctype="multipart/form-data">
+             <form action="signup.php" method="post" enctype="multipart/form-data">
             
-           <!--           <input type="text" name="name" placeholder="Input Your Name.." required>
-                    <input type="text" name="email" placeholder="Input Your Email.." required>
-                    <input type="text" name="phone" placeholder="Input Your phone.." required>
-                    <input type="text" name="address" placeholder="Input Your Address.." required>
-                    <input type="text" name="education" placeholder="Input Your Education.." required>
-                    <input type="password" name="password" placeholder="Input Your Password.." required>
-               -->    
-                   
+                   <input type="text" value="sdfasf" name="name" placeholder="Input Your Name.." required>
+                    <input type="text" value="sdfasf" name="email" placeholder="Input Your Email.." required>
+                    <input type="text" value="sdfasf" name="phone" placeholder="Input Your phone.." required>
+                    <input type="text" value="sdfasf" name="address" placeholder="Input Your Address.." required>
+                    <input type="text" value="sdfasf" name="education" placeholder="Input Your Education.." required>
+                    <input type="password" value="sdfasf" name="password" placeholder="Input Your Password.." required>
+                  
+
               
                 <div class="input-container">
                         
@@ -68,3 +69,19 @@
 </body>
 
 </html>
+<?php
+if ((isset($_POST['name'])) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['address']) && isset($_POST['education']) && ($_POST['password'])){
+
+ $name = ($_POST['name']);
+ $email = ($_POST['email']);
+ $phone = ($_POST['phone']);
+ $address = ($_POST['address']);
+ $education = ($_POST['education']);
+ $password = ($_POST['password']);
+
+ $signup = new JoBogor('pelamar');
+ $signup ->imageupload();
+ //$signup -> insert("'idpelamar', 'nama', 'address', 'email', 'password', 'phone', 'photo', 'cv', 'appletter', 'education'", "NULL, '$address', '$address', '$email', '$password', '$phone', 'pel-1', 'cv-1', 'al-1', '$education'" );
+}
+
+?>

@@ -3,16 +3,18 @@
 class Jobogor{
 
     var $servername = "localhost";
-    var $username = "username";
-    var $password = "password";
-    var $dbname = "myDBPDO";
+    var $username = "root";
+    var $password = "";
+    var $dbname = "jobogor";
+    var $table ;
     var $conn;
 
     function __construct($table){
         try {
-            $this ->conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+            $this ->conn = new PDO("mysql:host= localhost;dbname=jobogor", "root", "");
             // set the PDO error mode to exception
             $this ->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->table = $table;
         }
         catch(PDOException $e) {
             echo   "<br>" . $e->getMessage();
@@ -20,11 +22,46 @@ class Jobogor{
     }
     function insert($field,$values){
 
-        $sql = "INSERT INTO MyGuests (firstname, lastname, email) VALUES ('John', 'Doe', 'john@example.com')";
+        $sql = "INSERT INTO $this->table ($field) VALUES ($values)";
         // use exec() because no results are returned
         $conn->exec($sql);
         echo "New record created successfully";
   
+    }
+    function imageupload(){
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            // Check if file was uploaded without errors
+            if(isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0){
+                $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+                $filename = $_FILES["photo"]["name"];
+                $filetype = $_FILES["photo"]["type"];
+                $filesize = $_FILES["photo"]["size"];
+            
+                // Verify file extension
+                $ext = pathinfo($filename, PATHINFO_EXTENSION);
+                if(!array_key_exists($ext, $allowed)) die("Error: Please select a valid file format.");
+            
+                // Verify file size - 5MB maximum
+                $maxsize = 5 * 1024 * 1024;
+                if($filesize > $maxsize) die("Error: File size is larger than the allowed limit.");
+            
+                // Verify MYME type of the file
+                if(in_array($filetype, $allowed)){
+                    // Check whether file exists before uploading it
+                    if(file_exists("upload/" . $filename)){
+                        echo $filename . " is already exists.";
+                    } else{
+                        move_uploaded_file($_FILES["photo"]["tmp_name"], "file/pel1.$ext" );
+                        echo "Your file was uploaded successfully.";
+                    } 
+                } else{
+                    echo "Error: There was a problem uploading your file. Please try again."; 
+                }
+            } else{
+                echo "Error: " . $_FILES["photo"]["error"];
+            }
+        }
+
     }
 
     
