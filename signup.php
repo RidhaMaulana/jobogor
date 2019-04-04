@@ -1,4 +1,38 @@
-<?php include 'class.php';?>
+<?php include 'class.php';
+ $error ='';
+if ((isset($_POST['name'])) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['address']) && isset($_POST['education']) && ($_POST['password'])){
+
+    $name = ($_POST['name']);
+    $email = ($_POST['email']);
+    $phone = ($_POST['phone']);
+    $address = ($_POST['address']);
+    $education = ($_POST['education']);
+    $password = ($_POST['password']);
+    
+    $signup = new JoBogor('pelamar');
+    $idpelamar = $signup->getdata("email", $email)['idpelamar'];
+    if ($idpelamar){
+       $error = "email yang anda masukkan sudah digunakan" ;
+       
+    }else{
+       
+        $signup -> insert("`idpelamar`, `nama`, `address`, `email`, `password`, `phone`, `photo`, `cv`, `appletter`, `education`", "NULL, '$address', '$address', '$email', '$password', '$phone', '', '', '', '$education'" );
+        $idpelamar = $signup->getdata("email", $email)['idpelamar'];
+        $photo = "pel-$idpelamar"; 
+        $appletter = "AL-$idpelamar";
+        $cv         = "CV-$idpelamar";
+        $signup -> updatedata("`photo`='$photo',`cv`= '$cv',`appletter`='$appletter' ", "`idpelamar`", "$idpelamar");
+        $signup -> imageupload('photo',$photo );
+        //$signup -> docupload('cv',$cv );
+        //$signup -> docupload('appletter',$appletter );
+    }
+    
+    
+   
+     
+    
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,6 +57,7 @@
                 <div class="form-title">
                     <h1>DAFTAR</h1>
                     <h5>Tersedia banyak pilihan pekerjaan dengan pendapatan dan karir yang menjanjikan</h5>
+                    <h5 style= 'color:red'> <?php echo $error; ?> </h5>
                 </div>
 
             <div class="input">
@@ -50,7 +85,7 @@
                 
                                 
                         <label for="fileSelect">CV:</label>
-                        <input type="file" name="CV" id="fileSelect">
+                        <input type="file" name="cv" id="fileSelect">
               
                         <span class="file-info">Upload a file</span>
                     </div>
@@ -70,18 +105,6 @@
 
 </html>
 <?php
-if ((isset($_POST['name'])) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['address']) && isset($_POST['education']) && ($_POST['password'])){
 
- $name = ($_POST['name']);
- $email = ($_POST['email']);
- $phone = ($_POST['phone']);
- $address = ($_POST['address']);
- $education = ($_POST['education']);
- $password = ($_POST['password']);
-
- $signup = new JoBogor('pelamar');
- $signup ->imageupload();
- //$signup -> insert("'idpelamar', 'nama', 'address', 'email', 'password', 'phone', 'photo', 'cv', 'appletter', 'education'", "NULL, '$address', '$address', '$email', '$password', '$phone', 'pel-1', 'cv-1', 'al-1', '$education'" );
-}
 
 ?>
