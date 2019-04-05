@@ -114,6 +114,16 @@ class Jobogor{
         return $data;
         //print_r ($data);
     }
+
+    function login( $email, $password){
+        //echo "SELECT * FROM $this->table WHERE email = '$email' AND password = '$password' LIMIT 1 ";
+        $stmt = $this->conn->query("SELECT * FROM $this->table WHERE email = '$email' AND password = '$password' LIMIT 1 ");
+        
+        $data = $stmt->fetch();
+        
+        return $data;
+        //print_r ($data);
+    }
     function updatedata( $value, $field, $key){
    //     echo "UPDATE $this->table set $value WHERE $field = '$key'  ";
         $stmt = $this->conn->query("UPDATE $this->table set $value WHERE $field = '$key'  ");
